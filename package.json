@@ -1,0 +1,37 @@
+{
+  "name": "collegewithexpressts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node ./src/main.ts",
+    "run-mainRouter": "ts-node src/routers/mainRouter.ts",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidHorvitz/collegeWithExpressTS.git"
+  },
+  "author": "david Horvitz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidHorvitz/collegeWithExpressTS/issues"
+  },
+  "homepage": "https://github.com/DavidHorvitz/collegeWithExpressTS#readme",
+  "dependencies": {
+    "@types/sequelize": "^4.28.14",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "pg": "^8.10.0",
+    "sequelize": "^6.29.3",
+    "uuid-validate": "^0.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/uuid-validate": "^0.0.1",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}

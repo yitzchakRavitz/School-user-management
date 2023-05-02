@@ -1,0 +1,214 @@
+ 
+
+
+
+
+
+ ###
+ //setting the course to ready
+ PUT  http://localhost:8080/course/9a337267-2f4a-4085-a884-f509292cf0ea HTTP/1.1 
+
+
+###
+
+###
+ //retrieving basic / full course information
+ GET  http://localhost:8080/course/bc34e90e-2410-4f87-84e9-86ae3531612e?details HTTP/1.1 
+
+
+###
+
+
+GET http://localhost:8080/student/13f65552-470e-402b-9e74-24204d29911a/course/ HTTP/1.1
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+    ###
+
+###
+GET http://localhost:8080/student/13f65552-470e-402b-9e74-24204d29911a/course/history HTTP/1.1
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+###
+GET http://localhost:8080/lecturer/48d2b743-536e-4499-abca-613deb64e4a3/course/current HTTP/1.1
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+
+###
+GET http://localhost:8080/lecturer/48d2b743-536e-4499-abca-613deb64e4a3/course/betweenDates?startDate=2022-01-01&endDate=2023-06-07 HTTP/1.1
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+###
+GET http://localhost:8080/lecturer/48d2b743-536e-4499-abca-613deb64e4a3/schedule?startDate=2000-01-01&endDate=2030-06-07 HTTP/1.1
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+###    
+GET http://localhost:8080/student/13f65552-470e-402b-9e74-24204d29911a/schedule?startDate=2000-01-01&endDate=2030-04-02 HTTP/1.1
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+###
+GET http://localhost:8080/course/adb09d5a-6af6-418f-a592-360fbe950722/student/ HTTP/1.1
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  
+###
+POST http://localhost:8080/course/adb09d5a-6af6-418f-a592-360fbe950722/student/13f65552-470e-402b-9e74-24204d29911a HTTP/1.1
+###
+POST http://localhost:8080/lecturer/48d2b743-536e-4499-abca-613deb64e4a3/course/4b133dde-09e3-4a6d-a682-ac6910cc96d9 HTTP/1.1
+###
+POST http://localhost:8080/classDate/60fbb64c-23a2-44e4-9fa6-b928fa95fdf4/lecturer/48d2b743-536e-4499-abca-613deb64e4a3 HTTP/1.1
+
+###c2301afa-1425-4155-92f2-7ae04a98737f
+POST http://localhost:8080/classDate/6227474b-5a3a-4184-ae67-4818cbed0534/course/4b133dde-09e3-4a6d-a682-ac6910cc96d9 HTTP/1.1
+###
+POST http://localhost:8080/course/da122aa8-016f-4c93-8743-22a17cc87364/syllabus/56ac790d-a79d-45ad-80cc-672572bb3926 HTTP/1.1
+
+
+###
+DELETE http://localhost:8080/course/2dfad96e-541f-4ca6-89e5-5cf4ce2c8125 HTTP/1.1 HTTP/1.1
+###
+
+DELETE  http://localhost:8080/course/adb09d5a-6af6-418f-a592-360fbe950722/syllabus/92701237-53d4-420b-b9db-5ea264c9589e HTTP/1.1
+###
+PUT http://localhost:8080/course?course_name=React HTTP/1.1
+ Content-Type: application/json
+Accept-Language: en-us
+
+{
+   "Course_name":"Anguler",
+   "Is_ready":false
+}
+###
+PUT http://localhost:8080/course/d12f8cdf-2eef-46f5-8f4c-36e3a8d85d99 HTTP/1.1
+ Content-Type: application/json
+Accept-Language: en-us
+
+
+{
+  "StartingDate": "2023-01-01",
+  "EndDate": "2023-11-01"
+}
+###
+
+###
+PUT http://localhost:8080/course/d12f8cdf-2eef-46f5-8f4c-36e3a8d85d99/lecture-delete-data HTTP/1.1
+Content-Type: application/json
+Accept-Language: en-us
+
+{
+  "StartingDate": null,
+  "EndDate": null
+}
+
+###
+
+
+GET http://localhost:8080/course/e0cf2c14-4516-495f-ba2e-ebad798a8d95 HTTP/1.1
+ Content-Type: application/json
+Accept-Language: en-us
+
+ {
+      "Id":"e0cf2c14-4516-495f-ba2e-ebad798a8d95"
+ }
+
+###
+ POST  http://localhost:8080/student/ HTTP/1.1 
+ Content-Type: application/json
+ Accept-Language: en-us
+
+
+ {
+   "Name":"mali Horvitz",
+   "PhoneNumber":"0112343434",
+   "Email":"malid@ami.org.il"
+ }
+
+ ###
+
+
+###
+
+ POST  http://localhost:8080/lecturer/ HTTP/1.1 
+ Content-Type: application/json
+ Accept-Language: en-us
+
+
+ {
+   "Name":"moshe",
+   "Email":"akyd@ami.org.il",
+   "PhoneNumber":"0644847465"
+ }
+ ###
+
+
+
+###
+
+ POST  http://localhost:8080/course/ HTTP/1.1 
+Content-Type: application/json
+Accept-Language: en-us
+
+
+ {
+    "CourseName":"AWS",
+    "MinimumPassingScore" :11,
+     "MaximumStudents": 30,
+    "IsReady":true
+ }
+
+#  {
+#     "CourseName":"AWS",
+#     "StartingDate": "2023-01-01",
+#     "EndDate": "2024-09-01",
+#     "MinimumPassingScore" :11,
+#      "MaximumStudents": 30,
+#     "IsReady":true
+#  }
+
+###
+
+ GET  http://localhost:8080/course/:courseId HTTP/1.1 
+
+###
+
+
+ POST  http://localhost:8080/classDate/ HTTP/1.1 
+ Content-Type: application/json
+ Accept-Language: en-us
+
+
+ {
+   "StartHour":"07:00:00",
+   "EndHour":"09:00:00",
+   "RoomId":"8",
+   "EntryInSyllabus":"Testsssss"
+
+
+ }
+ 
+###
+
+ POST  http://localhost:8080/syllabus/ HTTP/1.1 
+ Content-Type: application/json
+ Accept-Language: en-us
+
+
+ {
+
+   "Title":"Recently posted",
+   "Description":"C:sersserocumentsitHuollegeWithExpressTSode_modulesraw-bodydex.js:231:16)<br> &nbsp; &nbsp;at done (C:sersocumentollegeWithExpressTSnode_modulesraw-bodyndex.js:220:7)<br> &nbsp; &nbsp;at IncomingMessage.onEnd ",
+   "References":"https://www.iconarchive.com/"
+
+ }
+
+
+
+
+
+
+# Content-Type: application/json
+# Accept-Language: en-us
+
+
+# {
+#    "Course_name" :"david",
+# }
